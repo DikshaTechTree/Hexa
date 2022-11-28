@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hexa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+@media screen and (max-width: 450px) {
+body {
+  background-color: orange;
+  font-size: small;
+}
+}
+@media (min-width:450px) and (max-width: 900px) {
+body {
+  background-color:gold;
+  font-size: medium;
+}
+
+}
+
+.container .row .col-md-6 .row .col-md-6 button{
+    background-color: red;
+    color:white;
+    border:none;
+    display: inline-block;
+    font-size: 15px;
+}
+@media screen and (max-width:450px){
+    .container .row .col-md-6 .row .col-md-6 button{
+        background-color: green;
+        color:rgb(20, 20, 20);
+        font-size: 10px;
+    }
+}
+@media (min-width:450px) and (max-width:900px){
+    .container .row .col-md-6 .row .col-md-6 button{
+        background-color: lightgreen;
+        color:black;
+        font-size: 12px;
+    }
+}
+
+.container .row .col-md-6 .media .media-body button{
+    background-color: red;
+    color:white;
+    border:none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+@media screen and (max-width:450px){
+    .container .row .col-md-6 .media .media-body button{
+        background-color: blueviolet;
+        color:black;
+        font-size: 10px;
+        
+    }
+}
+
+@media (min-width:450px) and (max-width:900px){
+    .container .row .col-md-6 .media .media-body button{
+        background-color:plum;
+        color:black;
+        font-size: 12px;
+    }
+}
+
+.container .row .col-md-4 .card{
+    font-size: large;
+}
+
+@media screen and (max-width:450px){
+    .container .row .col-md-4 .card{
+        font-size: small;
+    }
+}
+
+@media (min-width:450px) and (max-width:900px){
+    .container .row .col-md-4 .card{
+        font-size: medium;
+    }
+}
+
+#removal-button .btn{
+    background-color:red;
+    color:white;
+}
+
+@media screen and (max-width:450px){
+    #removal-button .btn{
+        display:none;
+    }
+}
+@media (min-width:450px) and (max-width:900px){
+    #removal-button .btn{
+        background-color:cornflowerblue;
+        color:white;
+        font-size: large;
+    }
+}
+
+.modal .modal-dialog .modal-content .modal-header .modal-title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:xx-large;
+}
+
+@media screen and (max-width:450px){
+    .modal .modal-dialog .modal-content .modal-header .modal-title{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: small;
+    }
+}
+
+@media (min-width:450px) and (max-width:900px){
+    .modal .modal-dialog .modal-content .modal-header .modal-title{
+        font-family:'Times New Roman', Times, serif;
+        font-size: medium;
+    }
+}
+
+.modal .modal-dialog .modal-content .modal-body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+}
+
+@media screen and (max-width:450px){
+    .modal .modal-dialog .modal-content .modal-body{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: small;
+    }
+}
+
+@media (min-width:450px) and (max-width:900px){
+    .modal .modal-dialog .modal-content .modal-body{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: medium;
+    }
+}
+
+.modal .modal-dialog .modal-content .modal-footer .btn{
+    background-color:red;
+    color:white;
+}
+
+@media screen and (max-width:450px){
+    .modal .modal-dialog .modal-content .modal-footer .btn{
+        background-color: blue;
+        color:white;
+        font-size:medium;
+    }
+}
+
+@media (min-width:450px) and (max-width:900px){
+    .modal .modal-dialog .modal-content .modal-footer .btn{
+        background-color:cornflowerblue;
+        color:white;
+        font-size: large;
+    }
+}
+
+</style>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+        <div class="container">
+          <a class="navbar-brand" href="javascript:void(0)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopkDD-xDUdgeJ0LLPX_TloPfyy8TT0s17EA&usqp=CAU" class="img-fluids" width="100px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">Home</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">Projects</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Architectural Design</a></li>
+                  <li><a class="dropdown-item" href="#">Interior</a></li>
+                  <li><a class="dropdown-item" href="#">Building</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">Contact</a>
+                  </li>
+            </ul>
+              <button class="btn btn-danger" type="button">COLORLIB</button>
+          </div>
+        </div>
+      </nav>
+    <div id="demo" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner style="transform: translate3d(-4059px, 0px, 0px); transition: all 0s ease 0s; width: 8118px;">
+            <div class="carousel-item active">
+                <img src="hexa/img_2.jpg"  class="img-fluids" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>Creative Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                  </div>
+            </div>
+            <div class="carousel-item">
+                <img src="hexa/slider-2.jpg.webp"  class="img-fluids" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>Modern Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                  </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    
+    <section class="section bg-light p-5">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeIn">
+        <div class="media block-6 d-block text-center">
+        <div class="icon mb-3"><span class="ion-ios-bell-outline"></span></div>
+        <div class="media-body">
+        <img src="https://i.pinimg.com/736x/d8/e1/e5/d8e1e5a33fc9f00117f591a298e70eee.jpg" class="img-fluids" width="60px">
+        <h3 class="heading">Modern Design</h3>
+        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeIn">
+        <div class="media block-6 d-block text-center">
+        <div class="icon mb-3"><span class="ion-ios-heart-outline"></span></div>
+        <div class="media-body">
+        <img src="data:image/png;base64,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" class="img-fluids" width="70px">
+        <h3 class="heading">Build With Love</h3>
+        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate__animated animate__fadeIn">
+        <div class="media block-6 d-block text-center">
+        <div class="icon mb-3"><span class="ion-ios-bolt-outline"></span></div>
+        <div class="media-body">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Hl3VWc8Rcbq4L1UB9g4LOYoZRQNY-EjV8g&usqp=CAU" class="img-fluids" width="60px">
+        <h3 class="heading">Fast Loading</h3>
+        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        
+<div class="container p-5">
+    <div class="row ">
+        <div class="col-md-5">
+            <div class="center animate__animated animate__fadeIn">
+            <p style="font-size:large">01 INFRASTRUCTURE</p>
+            <h2>Let's Build Together</h2><br><br>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        </div>
+        </div>
+        <div class="col-md-7 animate__animated animate__fadeIn">
+            <img src="hexa/img_1_long.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="container p-5 element-animate fadeInUp element-animated">
+    <div class="row">
+        <div class="col-md-7 animate__animated animate__fadeIn">
+            <img src="hexa/img_2_long.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-5">
+            <div class="center animate__animated animate__fadeIn">
+            <p style="font-size:large">02 COLLABORATE</p>
+            <h2>Open for Collaboration</h2><br><br>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+        </div>
+        </div>
+    </div>
+</div>
+   
+<div class="container p-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h2 style="text-align:justify; text-align:center;">Projects</h2>
+        <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_1.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_2.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_3.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_4.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_5.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 animate__animated animate__pulse">
+            <img src="hexa/img_6.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="container p-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h2 style="text-align:justify; text-align:center">Testimonial</h2>
+        <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+    </div>
+    </div>
+</div>
+   
+<div class="container p-3">
+    <div class="row">
+        <div class="col-md-4">
+<div class="card animate__animated animate__pulse" style="width: 22rem; height:20rem">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+        <div class="img-align-self-center "><img src="hexa/person_3.jpg" class="rounded-circle" width="70px"></div>
+    </div>
+    <div class="col-sm-9">
+        <div class="name-text align-self-center">
+        <h2>John Smith</h2>
+        <span>CEO,Co-Founder</span>
+      </div>
+    </div>
+    </div><br>
+    <blockquote>
+        <p style="text-align:left">” Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. “</p>
+     </blockquote>
+
+    </div>
+  </div>  
+</div>
+<div class="col-md-4">
+    <div class="card animate__animated animate__pulse" style="width: 22rem; height:20rem">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+            <div class="img-align-self-center"><img src="hexa/person_2.jpg" class="rounded-circle" width="70px"></div>
+        </div>
+        <div class="col-sm-9">
+            <div class="name-text align-self-center">
+            <h2>Joshua Darren</h2>
+            <span>CEO,Co-Founder</span>
+          </div>
+        </div>
+        </div><br>
+        <blockquote>
+            <p style="text-align:left">” Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. “</p>
+         </blockquote>
+    
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card animate__animated animate__pulse" style="width: 22rem; height:20rem">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                <div class="img-align-self-center"><img src="hexa/person_3.jpg" class="rounded-circle" width="70px"></div>
+            </div>
+            <div class="col-sm-9">
+                <div class="name-text align-self-center">
+                <h2>John Smith</h2>
+                <span>CEO,Co-Founder</span>
+              </div>
+            </div>
+            </div><br>
+            <blockquote>
+                <p style="text-align:left">” Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. “</p>
+             </blockquote>
+        
+            </div>
+          </div>
+        </div>
+</div>
+</div>
+
+<div class="container p-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h2 style="text-align:justify; text-align:center">Blog Posts</h2>
+        <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+    </div>
+    </div>
+</div>
+
+<div class="container p-3">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="hexa/img_1.jpg" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <p>FEB 26TH, 2018</p>
+                    <h5 style="color:red;">Free Website Template at Free-template.co</h5>
+                    <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                    <button type="button" class="btn btn-outline-danger">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="media mb-4 d-md-flex d-block">
+                <a href="#" class="mr-5"><img src="hexa/img_2.jpg" alt="Placeholder image" class="img-fluid" width="300px"></a>
+                <div class="media-body p-3">
+                <span class="post-meta">FEB 26th, 2018</span>
+                <h5 style="color:red">Free Website Template at Free-Template.co</h5>
+                <p><button type="button" class="btn btn-outline-danger btn-md">Read more</button></p>
+                </div>
+                </div>
+                <div class="media mb-4 d-md-flex d-block">
+                    <a href="#" class="mr-5"><img src="hexa/img_3.jpg" alt="Placeholder image" class="img-fluid" width="300px"></a>
+                    <div class="media-body p-3">
+                    <span class="post-meta">FEB 26th, 2018</span>
+                    <h5 style="color:red">Free Website Template at Free-Template.co</h5>
+                    <p><button type="button" class="btn btn-outline-danger btn-md">Read more</button></p>
+                    </div>
+                    </div>
+        </div> 
+    </div>
+</div>
+
+<div id="removal-button" class="container">
+    <button type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#myModal">
+      Change screen width
+    </button>
+  </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">!Media Queries!</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          !!Change the size of the browser to see different styles of the same web page!!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<footer class="site-footer mt-5 bg-dark " role="contentinfo">
+    <div class="container p-5">
+    <div class="row mb-5">
+    <div class="col-md-4 mb-5">
+    <h3 style="color:white">About The Hexa Template</h3>
+    <p class="mb-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+    
+    </div>
+    <div class="col-md-5 mb-5 pl-md-5">
+    <h3 style="color:white">Contact Info</h3>
+    <ul class="list-unstyled footer-link">
+    <li class="d-block">
+    <span class="d-block"><p style="color:white">Address:</p></span>
+    <span class="text-white">34 Street Name, City Name Here, United States</span></li><br>
+    <li class="d-block"><span class="d-block"><p style="color:white">Telephone:</p></span><span class="text-white">+1 242 4942 290</span></li><br>
+    <li class="d-block"><span class="d-block"><p style="color:white">Email:</p></span><span class="text-white">info@yourdomain.com</span></li>
+    </ul>
+    </div>
+    <div class="col-md-3 mb-5">
+    <h3 style="color:white">Quick Links</h3>
+    <ul class="list-unstyled footer-link">
+    <li><a href="https://preview.colorlib.com/theme/hexa/#">About</a></li>
+    <li><a href="https://preview.colorlib.com/theme/hexa/#">Terms of Use</a></li>
+    <li><a href="https://preview.colorlib.com/theme/hexa/#">Disclaimers</a></li>
+    <li><a href="https://preview.colorlib.com/theme/hexa/#">Contact</a></li>
+    </ul>
+    </div>
+    <div class="col-md-3">
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-12 text-md-center text-left">
+    <p style="color:white">
+    Copyright ©
+    <script>
+                      document.write(new Date().getFullYear());
+                    </script>2022 All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+    </p>
+    </div>
+    </div>
+    </div>
+    </footer>
+
+</body>
+</html>
